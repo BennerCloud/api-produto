@@ -5,7 +5,7 @@ pipeline {
         stage ('Build Image'){
             steps{
                 script{
-                    dockerapp = docker.build("bennerleon/hub" , '-f ./src/Dockerfile ./src')
+                    dockerapp = docker.build("bennerleon/api-produto" , '-f ./src/Dockerfile ./src')
                 }
             }
         }
