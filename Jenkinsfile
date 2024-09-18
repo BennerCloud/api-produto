@@ -2,10 +2,12 @@ pipeline {
     agent any
 
     stages{
-        stage ('Initial'){
+        stage ('Build Image'){
             steps{
-                echo 'iniciando o pipeline'
+                script{
+                    dockerapp = docker.build("bennerleon/api-produto", '-f ./src/Dockerfile ./src')
                 }
             }
         }
     }
+}
